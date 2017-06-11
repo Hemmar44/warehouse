@@ -11,11 +11,34 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
+
+Route::get('/', function() {
+
+	
+
+	return view('/public/main');
+});
+
+Route::get('/asortyment', function(){
+	return view('/public/products');
+});
+
+Route::get('/polecane', function(){
+	return view('/public/recommended');
+});
+
+
+Route::get('/nowosci', function(){
+	return view('/public/new');
+});
+
+Route::get('/promocje', function(){
+	return view('/public/promo');
+});
+
 
 
 

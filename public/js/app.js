@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 35);
+/******/ 	return __webpack_require__(__webpack_require__.s = 40);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -471,7 +471,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)))
 
 /***/ }),
 /* 2 */
@@ -770,11 +770,14 @@ module.exports = g;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__bootstrap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jquery_js__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jquery_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__jquery_js__);
 
 
-Vue.component('new-product', __webpack_require__(45));
+
+Vue.component('new-product', __webpack_require__(35));
 
 var app = new Vue({
     el: '#app'
@@ -1630,15 +1633,100 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 28 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+
+            net: '',
+            tax: 1.23,
+            quantity: ''
+
+        };
+    },
+
+
+    computed: {
+        gross: function gross() {
+
+            if (this.net) {
+
+                return (this.net * this.tax).toFixed(2);
+            }
+
+            return '';
+        },
+        valueNet: function valueNet() {
+
+            if (this.quantity && this.net) {
+
+                return (this.quantity * this.net).toFixed(2);
+            }
+
+            return '';
+        },
+        valueGross: function valueGross() {
+
+            if (this.quantity && this.gross) {
+
+                return (this.quantity * this.gross).toFixed(2);
+            }
+
+            return '';
+        }
+    }
+
+});
+
+/***/ }),
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(31);
+window._ = __webpack_require__(33);
 
 try {
-    window.$ = window.jQuery = __webpack_require__(30);
+    window.$ = window.jQuery = __webpack_require__(32);
 
-    __webpack_require__(29);
+    __webpack_require__(31);
 } catch (e) {}
 
 window.axios = __webpack_require__(10);
@@ -1653,10 +1741,214 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
-window.Vue = __webpack_require__(33);
+window.Vue = __webpack_require__(38);
 
 /***/ }),
-/* 29 */
+/* 30 */
+/***/ (function(module, exports) {
+
+/*
+ * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
+ *
+ * Uses the built in easing capabilities added In jQuery 1.1
+ * to offer multiple easing options
+ *
+ * TERMS OF USE - EASING EQUATIONS
+ * 
+ * Open source under the BSD License. 
+ * 
+ * Copyright Â© 2001 Robert Pennr
+ * All rights reserved.
+ *
+ * TERMS OF USE - jQuery Easing
+ * 
+ * Open source under the BSD License. 
+ * 
+ * Copyright Â© 2008 George McGinley Smith
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification, 
+ * are permitted provided that the following conditions are met:
+ * 
+ * Redistributions of source code must retain the above copyright notice, this list of 
+ * conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list 
+ * of conditions and the following disclaimer in the documentation and/or other materials 
+ * provided with the distribution.
+ * 
+ * Neither the name of the author nor the names of contributors may be used to endorse 
+ * or promote products derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+ * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *
+*/
+jQuery.easing.jswing = jQuery.easing.swing;jQuery.extend(jQuery.easing, { def: "easeOutQuad", swing: function swing(e, f, a, h, g) {
+        return jQuery.easing[jQuery.easing.def](e, f, a, h, g);
+    }, easeInQuad: function easeInQuad(e, f, a, h, g) {
+        return h * (f /= g) * f + a;
+    }, easeOutQuad: function easeOutQuad(e, f, a, h, g) {
+        return -h * (f /= g) * (f - 2) + a;
+    }, easeInOutQuad: function easeInOutQuad(e, f, a, h, g) {
+        if ((f /= g / 2) < 1) {
+            return h / 2 * f * f + a;
+        }return -h / 2 * (--f * (f - 2) - 1) + a;
+    }, easeInCubic: function easeInCubic(e, f, a, h, g) {
+        return h * (f /= g) * f * f + a;
+    }, easeOutCubic: function easeOutCubic(e, f, a, h, g) {
+        return h * ((f = f / g - 1) * f * f + 1) + a;
+    }, easeInOutCubic: function easeInOutCubic(e, f, a, h, g) {
+        if ((f /= g / 2) < 1) {
+            return h / 2 * f * f * f + a;
+        }return h / 2 * ((f -= 2) * f * f + 2) + a;
+    }, easeInQuart: function easeInQuart(e, f, a, h, g) {
+        return h * (f /= g) * f * f * f + a;
+    }, easeOutQuart: function easeOutQuart(e, f, a, h, g) {
+        return -h * ((f = f / g - 1) * f * f * f - 1) + a;
+    }, easeInOutQuart: function easeInOutQuart(e, f, a, h, g) {
+        if ((f /= g / 2) < 1) {
+            return h / 2 * f * f * f * f + a;
+        }return -h / 2 * ((f -= 2) * f * f * f - 2) + a;
+    }, easeInQuint: function easeInQuint(e, f, a, h, g) {
+        return h * (f /= g) * f * f * f * f + a;
+    }, easeOutQuint: function easeOutQuint(e, f, a, h, g) {
+        return h * ((f = f / g - 1) * f * f * f * f + 1) + a;
+    }, easeInOutQuint: function easeInOutQuint(e, f, a, h, g) {
+        if ((f /= g / 2) < 1) {
+            return h / 2 * f * f * f * f * f + a;
+        }return h / 2 * ((f -= 2) * f * f * f * f + 2) + a;
+    }, easeInSine: function easeInSine(e, f, a, h, g) {
+        return -h * Math.cos(f / g * (Math.PI / 2)) + h + a;
+    }, easeOutSine: function easeOutSine(e, f, a, h, g) {
+        return h * Math.sin(f / g * (Math.PI / 2)) + a;
+    }, easeInOutSine: function easeInOutSine(e, f, a, h, g) {
+        return -h / 2 * (Math.cos(Math.PI * f / g) - 1) + a;
+    }, easeInExpo: function easeInExpo(e, f, a, h, g) {
+        return f == 0 ? a : h * Math.pow(2, 10 * (f / g - 1)) + a;
+    }, easeOutExpo: function easeOutExpo(e, f, a, h, g) {
+        return f == g ? a + h : h * (-Math.pow(2, -10 * f / g) + 1) + a;
+    }, easeInOutExpo: function easeInOutExpo(e, f, a, h, g) {
+        if (f == 0) {
+            return a;
+        }if (f == g) {
+            return a + h;
+        }if ((f /= g / 2) < 1) {
+            return h / 2 * Math.pow(2, 10 * (f - 1)) + a;
+        }return h / 2 * (-Math.pow(2, -10 * --f) + 2) + a;
+    }, easeInCirc: function easeInCirc(e, f, a, h, g) {
+        return -h * (Math.sqrt(1 - (f /= g) * f) - 1) + a;
+    }, easeOutCirc: function easeOutCirc(e, f, a, h, g) {
+        return h * Math.sqrt(1 - (f = f / g - 1) * f) + a;
+    }, easeInOutCirc: function easeInOutCirc(e, f, a, h, g) {
+        if ((f /= g / 2) < 1) {
+            return -h / 2 * (Math.sqrt(1 - f * f) - 1) + a;
+        }return h / 2 * (Math.sqrt(1 - (f -= 2) * f) + 1) + a;
+    }, easeInElastic: function easeInElastic(f, h, e, l, k) {
+        var i = 1.70158;var j = 0;var g = l;if (h == 0) {
+            return e;
+        }if ((h /= k) == 1) {
+            return e + l;
+        }if (!j) {
+            j = k * 0.3;
+        }if (g < Math.abs(l)) {
+            g = l;var i = j / 4;
+        } else {
+            var i = j / (2 * Math.PI) * Math.asin(l / g);
+        }return -(g * Math.pow(2, 10 * (h -= 1)) * Math.sin((h * k - i) * (2 * Math.PI) / j)) + e;
+    }, easeOutElastic: function easeOutElastic(f, h, e, l, k) {
+        var i = 1.70158;var j = 0;var g = l;if (h == 0) {
+            return e;
+        }if ((h /= k) == 1) {
+            return e + l;
+        }if (!j) {
+            j = k * 0.3;
+        }if (g < Math.abs(l)) {
+            g = l;var i = j / 4;
+        } else {
+            var i = j / (2 * Math.PI) * Math.asin(l / g);
+        }return g * Math.pow(2, -10 * h) * Math.sin((h * k - i) * (2 * Math.PI) / j) + l + e;
+    }, easeInOutElastic: function easeInOutElastic(f, h, e, l, k) {
+        var i = 1.70158;var j = 0;var g = l;if (h == 0) {
+            return e;
+        }if ((h /= k / 2) == 2) {
+            return e + l;
+        }if (!j) {
+            j = k * (0.3 * 1.5);
+        }if (g < Math.abs(l)) {
+            g = l;var i = j / 4;
+        } else {
+            var i = j / (2 * Math.PI) * Math.asin(l / g);
+        }if (h < 1) {
+            return -0.5 * (g * Math.pow(2, 10 * (h -= 1)) * Math.sin((h * k - i) * (2 * Math.PI) / j)) + e;
+        }return g * Math.pow(2, -10 * (h -= 1)) * Math.sin((h * k - i) * (2 * Math.PI) / j) * 0.5 + l + e;
+    }, easeInBack: function easeInBack(e, f, a, i, h, g) {
+        if (g == undefined) {
+            g = 1.70158;
+        }return i * (f /= h) * f * ((g + 1) * f - g) + a;
+    }, easeOutBack: function easeOutBack(e, f, a, i, h, g) {
+        if (g == undefined) {
+            g = 1.70158;
+        }return i * ((f = f / h - 1) * f * ((g + 1) * f + g) + 1) + a;
+    }, easeInOutBack: function easeInOutBack(e, f, a, i, h, g) {
+        if (g == undefined) {
+            g = 1.70158;
+        }if ((f /= h / 2) < 1) {
+            return i / 2 * (f * f * (((g *= 1.525) + 1) * f - g)) + a;
+        }return i / 2 * ((f -= 2) * f * (((g *= 1.525) + 1) * f + g) + 2) + a;
+    }, easeInBounce: function easeInBounce(e, f, a, h, g) {
+        return h - jQuery.easing.easeOutBounce(e, g - f, 0, h, g) + a;
+    }, easeOutBounce: function easeOutBounce(e, f, a, h, g) {
+        if ((f /= g) < 1 / 2.75) {
+            return h * (7.5625 * f * f) + a;
+        } else {
+            if (f < 2 / 2.75) {
+                return h * (7.5625 * (f -= 1.5 / 2.75) * f + 0.75) + a;
+            } else {
+                if (f < 2.5 / 2.75) {
+                    return h * (7.5625 * (f -= 2.25 / 2.75) * f + 0.9375) + a;
+                } else {
+                    return h * (7.5625 * (f -= 2.625 / 2.75) * f + 0.984375) + a;
+                }
+            }
+        }
+    }, easeInOutBounce: function easeInOutBounce(e, f, a, h, g) {
+        if (f < g / 2) {
+            return jQuery.easing.easeInBounce(e, f * 2, 0, h, g) * 0.5 + a;
+        }return jQuery.easing.easeOutBounce(e, f * 2 - g, 0, h, g) * 0.5 + h * 0.5 + a;
+    } });
+
+(function ($) {
+
+    // Add smooth scrolling to all links in navbar .navbar a
+    $(".prevent>a, a.btn-appoint, .quick-info li a, .overlay-detail a").on('click', function (event) {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 900, function () {
+            window.location.hash = hash;
+        });
+    });
+
+    //jQuery to collapse the navbar on scroll
+    $(window).scroll(function () {
+        if ($(".navbar-default").offset().top > 50) {
+            $(".navbar-fixed-top").addClass("top-nav-collapse");
+        } else {
+            $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        }
+    });
+})(jQuery);
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports) {
 
 /*!
@@ -4039,7 +4331,7 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -14299,7 +14591,7 @@ return jQuery;
 
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -31388,10 +31680,10 @@ return jQuery;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(34)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(39)(module)))
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -31581,7 +31873,294 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 33 */
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(36)(
+  /* script */
+  __webpack_require__(28),
+  /* template */
+  __webpack_require__(37),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\wamp64\\www\\warehouse\\resources\\assets\\js\\components\\NewProduct.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] NewProduct.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4283ee5a", Component.options)
+  } else {
+    hotAPI.reload("data-v-4283ee5a", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  scopeId,
+  cssModules
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  // inject cssModules
+  if (cssModules) {
+    var computed = Object.create(options.computed || null)
+    Object.keys(cssModules).forEach(function (key) {
+      var module = cssModules[key]
+      computed[key] = function () { return module }
+    })
+    options.computed = computed
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('form', [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "exampleInputEmail1"
+    }
+  }, [_vm._v("Product Quantity")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.quantity),
+      expression: "quantity"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "quantity",
+      "name": "quantity",
+      "placeholder": "Quantity"
+    },
+    domProps: {
+      "value": (_vm.quantity)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.quantity = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "price_net"
+    }
+  }, [_vm._v("Price Net")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.net),
+      expression: "net"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "price_net",
+      "name": "price_net",
+      "placeholder": "Price Net"
+    },
+    domProps: {
+      "value": (_vm.net)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.net = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "price_gross"
+    }
+  }, [_vm._v("Price Gross")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.gross),
+      expression: "gross"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "price_gross",
+      "name": "price_gross",
+      "placeholder": "Price Gross",
+      "readonly": ""
+    },
+    domProps: {
+      "value": (_vm.gross)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.gross = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "value_net"
+    }
+  }, [_vm._v("Value Net")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.valueNet),
+      expression: "valueNet"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "value_net",
+      "name": "value_net",
+      "placeholder": "Value Net",
+      "readonly": ""
+    },
+    domProps: {
+      "value": (_vm.valueNet)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.valueNet = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "value_gross"
+    }
+  }, [_vm._v("Value Gross")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.valueGross),
+      expression: "valueGross"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "value_gross",
+      "name": "value_gross",
+      "placeholder": "Value Gross",
+      "readonly": ""
+    },
+    domProps: {
+      "value": (_vm.valueGross)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.valueGross = $event.target.value
+      }
+    }
+  })])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "name"
+    }
+  }, [_vm._v("Product Name")]), _vm._v(" "), _c('input', {
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "name",
+      "name": "name",
+      "placeholder": "Product name"
+    }
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "tax"
+    }
+  }, [_vm._v("Tax")]), _vm._v(" "), _c('input', {
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "tax",
+      "name": "tax",
+      "value": "23%",
+      "readonly": ""
+    }
+  })])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-4283ee5a", module.exports)
+  }
+}
+
+/***/ }),
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41280,7 +41859,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
-/* 34 */
+/* 39 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -41308,392 +41887,12 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 35 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(8);
 module.exports = __webpack_require__(9);
 
-
-/***/ }),
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-
-            net: '',
-            tax: 1.23,
-            quantity: ''
-
-        };
-    },
-
-
-    computed: {
-        gross: function gross() {
-
-            if (this.net) {
-
-                return (this.net * this.tax).toFixed(2);
-            }
-
-            return '';
-        },
-        valueNet: function valueNet() {
-
-            if (this.quantity && this.net) {
-
-                return (this.quantity * this.net).toFixed(2);
-            }
-
-            return '';
-        },
-        valueGross: function valueGross() {
-
-            if (this.quantity && this.gross) {
-
-                return (this.quantity * this.gross).toFixed(2);
-            }
-
-            return '';
-        }
-    }
-
-});
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(46)(
-  /* script */
-  __webpack_require__(44),
-  /* template */
-  __webpack_require__(47),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "C:\\wamp64\\www\\warehouse\\resources\\assets\\js\\components\\NewProduct.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] NewProduct.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4283ee5a", Component.options)
-  } else {
-    hotAPI.reload("data-v-4283ee5a", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports) {
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  scopeId,
-  cssModules
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  // inject cssModules
-  if (cssModules) {
-    var computed = Object.create(options.computed || null)
-    Object.keys(cssModules).forEach(function (key) {
-      var module = cssModules[key]
-      computed[key] = function () { return module }
-    })
-    options.computed = computed
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('form', [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "exampleInputEmail1"
-    }
-  }, [_vm._v("Product Quantity")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.quantity),
-      expression: "quantity"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "quantity",
-      "name": "quantity",
-      "placeholder": "Quantity"
-    },
-    domProps: {
-      "value": (_vm.quantity)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.quantity = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "price_net"
-    }
-  }, [_vm._v("Price Net")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.net),
-      expression: "net"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "price_net",
-      "name": "price_net",
-      "placeholder": "Price Net"
-    },
-    domProps: {
-      "value": (_vm.net)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.net = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "price_gross"
-    }
-  }, [_vm._v("Price Gross")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.gross),
-      expression: "gross"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "price_gross",
-      "name": "price_gross",
-      "placeholder": "Price Gross",
-      "readonly": ""
-    },
-    domProps: {
-      "value": (_vm.gross)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.gross = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "value_net"
-    }
-  }, [_vm._v("Value Net")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.valueNet),
-      expression: "valueNet"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "value_net",
-      "name": "value_net",
-      "placeholder": "Value Net",
-      "readonly": ""
-    },
-    domProps: {
-      "value": (_vm.valueNet)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.valueNet = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "value_gross"
-    }
-  }, [_vm._v("Value Gross")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.valueGross),
-      expression: "valueGross"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "value_gross",
-      "name": "value_gross",
-      "placeholder": "Value Gross",
-      "readonly": ""
-    },
-    domProps: {
-      "value": (_vm.valueGross)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.valueGross = $event.target.value
-      }
-    }
-  })])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "name"
-    }
-  }, [_vm._v("Product Name")]), _vm._v(" "), _c('input', {
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "name",
-      "name": "name",
-      "placeholder": "Product name"
-    }
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "tax"
-    }
-  }, [_vm._v("Tax")]), _vm._v(" "), _c('input', {
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "tax",
-      "name": "tax",
-      "value": "23%",
-      "readonly": ""
-    }
-  })])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4283ee5a", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);

@@ -1,4 +1,6 @@
 import './bootstrap';
+import './jquery.js';
+
 
 Vue.component('new-product', require('./components/NewProduct.vue'));
 
