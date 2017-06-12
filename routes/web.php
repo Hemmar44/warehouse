@@ -22,29 +22,17 @@ Route::get('/', function() {
 	return view('/public/main');
 });
 
-Route::get('/asortyment', function(){
-	return view('/public/products');
-});
+Route::get('/asortyment','WareController@all');
 
-Route::get('/polecane', function(){
-	return view('/public/recommended');
-});
+Route::get('/polecane', 'WareController@products');
 
+Route::get('/nowosci', 'WareController@products');
 
-Route::get('/nowosci', function(){
-	return view('/public/new');
-});
-
-Route::get('/promocje', function(){
-	return view('/public/promo');
-});
-
-
+Route::get('/promocje', 'WareController@products');
 
 
 Route::get('/admin', ['middleware' => 'admin', function() {
-	return view('admin');
+	return view('/admin/admin');
 }]);
 
-Route::get('/wares', 'WaresController@index');
-Route::get('new', 'WaresController@create');
+

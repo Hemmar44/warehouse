@@ -7,7 +7,19 @@
 		<section id="products" class="custom-padding">
 				<div class="container">
 					<div class="col-md-12">
-							<h2 class="ser-title">Tu znajdziesz marki, z którymi wspólpracujemy</h2>
+							<h2 class="ser-title">
+
+              @unless (count($wares))
+
+              Na razie nic tu nie ma, sprawdź później.
+
+              @else
+
+              Sprawdź co dla ciebie przygotowaliśmy:
+
+              @endunless
+
+              </h2>
 							<hr class="botm-line">
 					</div>
 					<div class="row">

@@ -23,15 +23,23 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Wares::class, function (Faker\Generator $faker) {
+$factory->define(App\Ware::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'brand_id' => $faker->numberBetween($min = 1, $max = 10),
+        'name' => $faker->word,
+        'description' => $faker->paragraph,
+        'price' => $faker->randomFloat
+    ];
+});
+
+$factory->define(App\Brand::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
         'name' => $faker->word,
-        'quantity' => $faker->randomDigitNotNull,
-        'price_net' => $faker->randomFloat,
-        'price_gross' => $faker->randomFloat,
-        'value_net' => $faker->randomFloat,
-        'value_gross' => $faker->randomFloat,
+        'description' => $faker->paragraph,
+        'picture' => $faker->word
     ];
 });

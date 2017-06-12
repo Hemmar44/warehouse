@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Wares;
+use App\Ware;
 use Illuminate\Http\Request;
 
-class WaresController extends Controller
+class WareController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,48 @@ class WaresController extends Controller
      */
     public function index()
     {
-        return Wares::all();
+        return Ware::all();
     }
+
+    public function all(Request $request) {
+
+        return $request->path();
+
+        $wares = Ware::paginate(15);
+
+        return view('/public/products', compact('wares'));
+    
+    }
+
+    public function products(Request $request) {
+
+        $uri = $request->path();
+
+        if ($uri === 'polecane') {
+
+        $wares = Ware::where('recommended', 1)->paginate(6);
+
+        }
+
+        else if ($uri === 'nowosci') {
+
+        $wares = Ware::where('new', 1)->paginate(6);
+
+        }
+
+        else if ($uri === 'promocje') {
+
+        $wares = Ware::where('promo', 1)->paginate(6);
+
+        }
+
+        
+
+        return view('/public/show', compact('wares'));
+    
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

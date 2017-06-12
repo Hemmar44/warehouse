@@ -5,7 +5,7 @@
 		  	<!--banner-->
 			<section id="banner" class="banner">
 				<div class="bg-color">
-					@include('public.navmain')
+					@include('layouts.navmain')
 					<div class="container">
 
 						<div class="row">
