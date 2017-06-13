@@ -1,39 +1,50 @@
 @extends('layouts.main')
 
-	@section('content')
+  @section('content')
 
-		@include('layouts.nav')
+    @include('layouts.nav')
 
-		<section id="products" class="custom-padding">
-				<div class="container">
-					<div class="col-md-12">
-							<h2 class="ser-title">Tu znajdziesz marki, z którymi wspólpracujemy</h2>
-							<hr class="botm-line">
-					</div>
-					<div class="row">
-						@foreach ($wares as $ware)
-						<div class="col-md-4 col-sm-6 col-xs-12">
-              				<div class="thumbnail">
-                				<img src="http://placehold.it/350x222" alt="">
-            					<div class="caption">
-                  					<h4 class="pull-right">PLN {{$ware->price}}</h4>
-                  					<h4><a href="#">{{$ware->name}}</a></h4>
-                  						<hr>
-                  						<div class='product-description'>
-                  							{{$ware->description}}
-                  						</div>
-            					</div>
-            				</div>
-              			</div>
-              			@endforeach
-              			
-  					</div>
+    <section id="products" class="custom-padding">
+        <div class="container">
+          @foreach ($brands as $brand)
+          <div class="col-md-12">
+              @if (isset($message))
+              <h2 class="pull-right alert alert-success">
+                {{$message}}
+              </h2>
+              @endif
+              
+              <h2 class="ser-title">
 
-  					{{ $wares->links() }}
+                      {{$brand->name}}
 
-  				</div>
+                      </h2>
+              <hr class="botm-line">
+          </div>
+          <div class="row">
+            
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                      <div class="thumbnail">
+                <img src="http://placehold.it/350x222" alt="">
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+
+                    <div class="caption">
+                            <h3 class='text-center'>{{$brand->name}}</h3>
+                            <hr>
+                            
+                           
+                              <div>
+                                {{$brand->description}}
+                              </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+        </div>
 
 
-  		</section>
+      </section>
 
-	@endsection
+  @endsection

@@ -22,7 +22,7 @@ Route::get('/', function() {
 	return view('/public/main');
 });
 
-Route::get('/asortyment','WareController@all');
+Route::get('/asortyment','BrandController@brands');
 
 Route::get('/polecane', 'WareController@products');
 
@@ -34,5 +34,7 @@ Route::get('/promocje', 'WareController@products');
 Route::get('/admin', ['middleware' => 'admin', function() {
 	return view('/admin/admin');
 }]);
+
+Route::get('/asortyment/produkty/{ware}', 'WareController@show');
 
 

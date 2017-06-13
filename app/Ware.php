@@ -11,4 +11,10 @@ class Ware extends Model
     {
         return $this->belongsTo('App\Brand');
     }
+
+    public function getRouteKeyName()
+    {
+        return 'name';
+        //return $this->getKeyName();
+    }
 }

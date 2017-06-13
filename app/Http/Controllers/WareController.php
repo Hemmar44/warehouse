@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class WareController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +18,8 @@ class WareController extends Controller
     {
         return Ware::all();
     }
+
+    
 
     public function all(Request $request) {
 
@@ -33,11 +37,15 @@ class WareController extends Controller
 
         if ($uri === 'polecane') {
 
+        $header = $this->setHeader('Polecamy nasze najbardziej popularne produkty');
+
         $wares = Ware::where('recommended', 1)->paginate(6);
 
         }
 
         else if ($uri === 'nowosci') {
+
+        $header = $this->setHeader('Nasze nowości');
 
         $wares = Ware::where('new', 1)->paginate(6);
 
@@ -45,15 +53,21 @@ class WareController extends Controller
 
         else if ($uri === 'promocje') {
 
+        $header = $this->setHeader('W tym miesiącu w najniższych cenach');
+
         $wares = Ware::where('promo', 1)->paginate(6);
 
         }
 
         
 
-        return view('/public/show', compact('wares'));
+        return view('/public/show', compact('wares', 'header'));
     
     }
+
+       
+
+
 
 
 
@@ -84,9 +98,12 @@ class WareController extends Controller
      * @param  \App\Wares  $wares
      * @return \Illuminate\Http\Response
      */
-    public function show(Wares $wares)
-    {
-        //
+    public function show(Ware $ware)
+    {   
+        
+        $message = $this->checkForSpecialOffer($ware);
+
+        return view('/public/single', compact('ware', 'message'));
     }
 
     /**
@@ -121,5 +138,32 @@ class WareController extends Controller
     public function destroy(Wares $wares)
     {
         //
+    }
+
+     public function setHeader($message) {
+
+           return $header = $message;
+
+    }
+
+    public function checkForSpecialOffer($ware) {
+
+        if ($ware->new) {
+
+            return 'Nowość';
+        
+        }
+
+        if ($ware->recommended) {
+
+            return 'Polecamy';
+        }
+
+        if ($ware->promo) {
+
+            return 'Promocja';
+        }
+
+        return '';
     }
 }
