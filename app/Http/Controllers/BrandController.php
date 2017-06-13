@@ -16,5 +16,10 @@ class BrandController extends Controller
 
     }
 
+    public function show(Brand $brand) {
+
+    	return view('/public/singlebrand', compact('brand'));
+    }
+
    
 }

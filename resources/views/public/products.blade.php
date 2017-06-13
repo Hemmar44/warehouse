@@ -14,33 +14,32 @@
               </h2>
               @endif
               
-              <h2 class="ser-title">
-
+              <h3 class="ser-title">
+                  <a href="/asortyment/marki/{{$brand->name}}">
                       {{$brand->name}}
-
-                      </h2>
+                  </a>
+              </h3>
               <hr class="botm-line">
           </div>
-          <div class="row">
+          <div class="row brands">
             
             <div class="col-md-4 col-sm-6 col-xs-12">
-                      <div class="thumbnail">
-                <img src="http://placehold.it/350x222" alt="">
-                      </div>
-                    </div>
-                    <div class="col-md-8 col-sm-6 col-xs-12">
-
-                    <div class="caption">
-                            <h3 class='text-center'>{{$brand->name}}</h3>
-                            <hr>
-                            
-                           
-                              <div>
-                                {{$brand->description}}
-                              </div>
-                    </div>
-                  </div>
+                <div class="thumbnail">
+                    <img src="http://placehold.it/350x222" alt="">
                 </div>
+            </div>
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <div class="caption brand-caption">
+                    <div class='brand-name'>
+                        <h3 class='text-center'><a href="/asortyment/marki/{{$brand->name}}"> {{$brand->name}}</a></h3>
+                    </div>
+                    <hr>
+                    <div class='brand-description'>
+                        {{$brand->description}}
+                    </div>
+                </div>
+            </div>
+          </div>
               @endforeach
         </div>
 

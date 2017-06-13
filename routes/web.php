@@ -37,4 +37,6 @@ Route::get('/admin', ['middleware' => 'admin', function() {
 
 Route::get('/asortyment/produkty/{ware}', 'WareController@show');
 
+Route::get('/asortyment/marki/{brand}', 'BrandController@show');
+
 
